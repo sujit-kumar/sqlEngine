@@ -1,0 +1,11 @@
+Q-1 > Implement a query to get a list of all students and how many courses each student is enrolled in .
+
+
+
+query 
+----------
+SELECT  DISTINCT`student`.`STUDENT_NAME`,COUNT(`student_courses`.`STUDENT_ID`) FROM  
+
+`student` LEFT OUTER JOIN `student_courses` ON `student`.`STUDENT_ID` = `student_courses`.`STUDENT_ID`
+
+GROUP BY `student_courses`.`STUDENT_ID`;

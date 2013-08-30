@@ -1,0 +1,11 @@
+Q>2.Implement a query to get list of all teachers and how many students they teach. Sort the list in descending order of the number of students a teacher teaches.
+
+
+
+query
+---------
+SELECT  `teacher`.`TEACHER_NAME`, COUNT(`student_courses`.`COURSE_ID`) AS No_of_student  from `course` RIGHT OUTER JOIN `student_courses` ON `course`.`COURSE_ID` = `student_courses`.`COURSE_ID` RIGHT OUTER JOIN `teacher` on `course`.`TEACHER_ID` = `teacher`.`TEACHER_ID`
+
+GROUP BY `student_courses`.`COURSE_ID`
+
+ORDER BY COUNT(`student_courses`.`COURSE_ID`) DESC

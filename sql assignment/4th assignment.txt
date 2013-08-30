@@ -1,0 +1,11 @@
+Q.3-Get list of all building names and no of open request for those building?
+
+
+
+query:
+---------
+SELECT building.building_name,COUNT(request.apartment_id)AS no_of_open 
+FROM apartments RIGHT OUTER JOIN request ON
+apartments.Apartment_id = request.apartment_id AND request.status LIKE '%open%' 
+RIGHT OUTER JOIN building ON apartments.building_id = building.building_id 
+GROUP BY request.apartment_id
